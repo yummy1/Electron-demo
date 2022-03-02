@@ -1,5 +1,19 @@
 .DS_Store
 /mm-demo/node_modules/
 /mm-demo/dist/
+
 /electron-pomodoro/node_modules/
-/electron-vue-remote-control/node_modules/
+/electron-vue/node_modules/
+
+/electron-vue-template-master/node_modules/
+/electron-vue-template-master/build/win-unpacked/
+/electron-vue-template-master/build/win-ia32-unpacked/
+/electron-vue-template-master/build/mac/
+/electron-vue-template-master/build/*.dmg
+/electron-vue-template-master/build/*.yml
+/electron-vue-template-master/build/*.blockmap
+/electron-vue-template-master/build/*.zip
+/electron-vue-template-master/electron-vue-template-ts.7z
+/electron-vue-template-master/server/client/electron-vue-admin Setup 0.0.1.exe
+/electron-vue-template-master/build/builder-effective-config.yaml
+/electron-vue-template-master/dist/electron/
