@@ -3,14 +3,15 @@ const path = require('path')
 
 function createWindow () {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
-    webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
-    }
+    width: 1400,
+    height: 1000,
+    // webPreferences: {
+    //   preload: path.join(__dirname, 'preload.js')
+    // }
   })
 
-  win.loadFile('index.html')
+  // win.loadFile('index.html')
+  win.loadURL('http://10.17.130.100:8501')
 }
 
 app.whenReady().then(() => {

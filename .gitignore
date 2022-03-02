@@ -1,3 +1,4 @@
 .DS_Store
 /mm-demo/node_modules/
 /mm-demo/dist/
+/electron-pomodoro/node_modules/
