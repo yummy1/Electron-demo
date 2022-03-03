@@ -2,15 +2,16 @@
   "name": "electron-pomodoro-app",
   "version": "1.0.0",
   "description": "pomodoro",
-  "main": "main.js",
+  "main": "app/main.js",
   "scripts": {
     "start": "electron .",
-    "pack:mac": "NPM_CONFIG_ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/ electron-builder build --mac"
+    "pack:mac": "electron-builder build --mac"
   },
-  "author": "yummy",
+  "author": "maomao",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^17.1.0"
+    "electron": "^17.1.0",
+    "electron-builder": "^22.14.13"
   },
   "dependencies": {
     "progressbar.js": "^1.1.0",
@@ -18,7 +19,7 @@
   },
   "build": {
     "appId": "com.maomao",
-    "productName": "番茄钟",
+    "productName": "pomodoro",
     "files": "app",
     "asar": false,
     "directories": {
@@ -55,20 +56,12 @@
       "iconSize": 128
     },
     "win": {
-      "icon": "resources/icon.ico",
-      "target": [
-        "squirrel",
-        "nsis"
-      ]
+      "icon": "resources/icon.icns",
+      "target": "nsis"
     },
-    "nsis": {
-      "oneClick": false,
-      "language": "2052",
-      "perMachine": true,
-      "allowToChangeInstallationDirectory": true
-    },
-    "squirrelWindows": {
-      "iconUrl": "https://raw.githubusercontent.com/dengyaolong/geektime-electron/master/img/icon.ico"
+    "linux": {
+      "target": "deb",
+      "icon": "resources/icon.icns"
     }
   }
 }

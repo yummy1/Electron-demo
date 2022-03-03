@@ -1,5 +1,8 @@
 .DS_Store
 /**/node_modules/
+
+/electron-pomodoro/release/
+
 /mm-demo/dist/
 
 /electron-vue/node_modules/
