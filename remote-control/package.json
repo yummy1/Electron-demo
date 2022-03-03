@@ -1,0 +1,28 @@
+{
+  "name": "remote-control",
+  "version": "1.0.0",
+  "description": "remote-control-mm",
+  "main": "app/main/index.js",
+  "author": "maomao",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"yarn start:render\" \"wait-on http://localhost:8080/ && yarn start:main\" ",
+    "start:main": "electron .",
+    "start:render": "cd app/renderer/src/main && yarn serve"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "electron": "^17.1.0",
+    "electron-rebuild": "^3.2.7",
+    "wait-on": "^6.0.1"
+  },
+  "dependencies": {
+    "about-window": "^1.15.2",
+    "electron-about-window": "^1.15.2",
+    "electron-is-dev": "^2.0.0",
+    "robotjs": "^0.6.0",
+    "vkey": "^1.0.1",
+    "ws": "^8.5.0"
+  }
+}

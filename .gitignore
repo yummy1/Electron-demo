@@ -25,3 +25,5 @@
 /electron-vue-NoLayout/electron-vue-template-ts.7z
 /electron-vue-NoLayout/build/builder-effective-config.yaml
 /electron-vue-NoLayout/dist/electron/
+
+/remote-control/app/renderer/src/main/node_modules/
