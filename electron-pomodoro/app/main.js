@@ -1,4 +1,5 @@
 const { app, BrowserWindow, ipcMain, Notification } = require('electron')
+const isDev = require('electron-is-dev')
 const {create: createMainWindow, show: showMainWindow, close: closeMainWindow} = require('./windows/main')
 const darwinMenu = require('./trayAndMenu/darwin')
 function handleIPC() {
@@ -52,5 +53,12 @@ app.on('window-all-closed', () => {
 
 app.on('before-quit', () => {
   closeMainWindow()
+})
+
+app.on('will-finish-launching', () => {
+  if(!isDev) {
+      require('./updater.js')
+  }
+  require('./crash-reporter').init()
 })
 

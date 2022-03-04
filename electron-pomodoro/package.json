@@ -11,7 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "electron": "^17.1.0",
-    "electron-builder": "^22.14.13"
+    "electron-builder": "^22.14.13",
+    "electron-updater": "^4.6.5"
   },
   "dependencies": {
     "about-window": "^1.15.2",

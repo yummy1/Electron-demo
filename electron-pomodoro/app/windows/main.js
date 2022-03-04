@@ -47,4 +47,8 @@ function close() {
     win.close()
 }
 
-module.exports = {create, send, show, close}
+function setProgressBar(val) {
+    win.setProgressBar(val)
+}
+
+module.exports = {create, send, show, close, setProgressBar}
