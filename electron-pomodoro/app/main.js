@@ -1,5 +1,6 @@
 const { app, BrowserWindow, ipcMain, Notification } = require('electron')
-let mainWindow;
+const {create: createMainWindow, show: showMainWindow, close: closeMainWindow} = require('./windows/main')
+const darwinMenu = require('./trayAndMenu/darwin')
 function handleIPC() {
     ipcMain.handle('notification', async (e, {body, title, actions, closeButtonText}) => {
         let res = await new Promise((resolve, reject) => {
@@ -27,36 +28,29 @@ function handleIPC() {
     })
 }
 
-function createWindow () {
-  mainWindow = new BrowserWindow({
-    width: 250,
-    height: 350,
-    webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false
-    }
-  })
-
-  mainWindow.loadFile('app/index.html')
-
-  // mainWindow.webContents.openDevTools({mode:'right'})
-}
-
-app.whenReady().then(() => {
-  createWindow()
-
+app.on('ready', () => {
+  createMainWindow()
+  darwinMenu.setTray()
+  darwinMenu.setAppMenu()
   handleIPC()
+})
 
-  app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) {
-      createWindow()
-    }
-  })
+app.on('activate', () => {
+  showMainWindow()
+})
+
+app.on('second-instance', (event, commandLine, workingDirectory) => {
+  // 当运行第二个实例时,将会聚焦到myWindow这个窗口
+  showMainWindow()
 })
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit()
   }
+})
+
+app.on('before-quit', () => {
+  closeMainWindow()
 })
 

@@ -1,7 +1,7 @@
 {
   "name": "electron-pomodoro-app",
   "version": "1.0.0",
-  "description": "pomodoro",
+  "description": "番茄钟",
   "main": "app/main.js",
   "scripts": {
     "start": "electron .",
@@ -14,12 +14,14 @@
     "electron-builder": "^22.14.13"
   },
   "dependencies": {
+    "about-window": "^1.15.2",
+    "electron-is-dev": "^2.0.0",
     "progressbar.js": "^1.1.0",
     "timer.js": "^1.0.4"
   },
   "build": {
     "appId": "com.maomao",
-    "productName": "pomodoro",
+    "productName": "番茄钟",
     "files": "app",
     "asar": false,
     "directories": {
@@ -37,8 +39,8 @@
     "dmg": {
       "background": "resources/background.png",
       "window": {
-        "width": 250,
-        "height": 350
+        "width": 540,
+        "height": 380
       },
       "contents": [
         {

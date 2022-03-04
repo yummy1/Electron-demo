@@ -11,8 +11,8 @@ let progressBar = new ProgressBar.Circle('#timer-container', {
     svgStyle: null
 })
 
-let workTime = 1 * 15 // 1分钟工作, 自行设定
-let restTime = 5 // 10秒休息
+let workTime = 60 * 15 // 15分钟工作, 自行设定
+let restTime = 60 * 5 // 5分钟休息
 let state = {}
 
 function render () {
