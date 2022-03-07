@@ -2,7 +2,7 @@ const user = {
   state: {
     token: 'admin',
     name: 'Super Admin',
-    roles: ['admin']
+    avatar: ''
   },
 
   mutations: {
@@ -14,9 +14,9 @@ const user = {
       localStorage.setItem('name', JSON.stringify(name))
       state.name = name
     },
-    SET_ROLES: (state, roles) => {
-      localStorage.setItem('roles', JSON.stringify(roles))
-      state.roles = roles
+    SET_AVATAR: (state, avatar) => {
+      localStorage.setItem('avatar', JSON.stringify(avatar))
+      state.avatar = avatar
     }
   },
 
@@ -28,8 +28,7 @@ const user = {
       return new Promise((resolve, reject) => {
         console.log('这是传过来的登录信息', data)
         commit('SET_TOKEN', 'admin')
-        commit('SET_ROLES', ['admin'])
-        commit('SET_NAME', 'Super Admin')
+        commit('SET_NAME', 'Admin')
         resolve()
       })
     },
@@ -41,7 +40,6 @@ const user = {
     }) {
       return new Promise((resolve, reject) => {
         commit('SET_TOKEN', '')
-        commit('SET_ROLES', [])
         resolve()
       })
     },
