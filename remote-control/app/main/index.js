@@ -13,9 +13,9 @@ if(!gotTheLock) {
     app.on('ready', () => {
         // createControlWindow()
         createMainWindow()
-        handleIPC()
-        require('./trayAndMenu')
-        require('./robot.js')()
+        // handleIPC()
+        // require('./trayAndMenu')
+        // require('./robot.js')()
     })
     app.on('before-quit', () => {
         closeMainWindow()
