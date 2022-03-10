@@ -1,7 +1,8 @@
 const user = {
+  namespaced: true,
   state: {
     token: 'admin',
-    name: 'Super Admin',
+    name: 'Admin',
     avatar: ''
   },
 

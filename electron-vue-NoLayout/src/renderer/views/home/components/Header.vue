@@ -2,6 +2,7 @@
   <div class="app-header">
     <div class="left-header">
       <img src="@/assets/logo.png" alt="">
+      <h4>闲聊</h4>
     </div>
     <div class="right-header">
       <img src="@/assets/avatar.png" alt="">
@@ -14,9 +15,9 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  name: 'appHeader',
+  name: 'app-header',
   computed: {
-      ...mapGetters('name', 'avatar')
+      ...mapGetters(['name', 'avatar'])
   }
 }
 </script>
@@ -29,15 +30,26 @@ export default {
   justify-content: space-between;
   box-shadow: 2px 0 6px rgba(0,21,41,.15);
   .left-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     img {
       width: 50px;
       height: 60px;
       margin-bottom: -10px;
       margin-left: 80px;
     }
+    h4 {
+      margin-left: 20px;
+      font-size: 34px;
+      background: linear-gradient(to right, red, #2627E5);
+      -webkit-background-clip: text;
+      color: transparent;
+      font-family: "宋体";
+      font-weight: 600;
+    }
   }
   .right-header {
-    width: 100px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -47,6 +59,7 @@ export default {
     img {
       width: 30px;
       height: 30px;
+      margin-right: 5px;
     }
   }
 }
