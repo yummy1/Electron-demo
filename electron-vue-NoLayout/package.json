@@ -1,6 +1,6 @@
 {
-  "name": "electron-vue-admin",
-  "version": "0.0.1",
+  "name": "small-talk",
+  "version": "1.0.0",
   "author": "sky <https://github.com/umbrella22>",
   "description": "An electron-vue project",
   "license": "MIT",
@@ -27,7 +27,7 @@
         "url": "http://127.0.0.1:25565/"
       }
     ],
-    "productName": "electron-vue-admin",
+    "productName": "闲聊",
     "appId": "org.simulatedgreg.electron-vue",
     "directories": {
       "output": "build"
