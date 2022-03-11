@@ -2,7 +2,7 @@
   <div class="breakfast">
     <custom-title title="营养早餐"></custom-title>
     <ul>
-        <li v-for="index in 10" :key="index">
+        <li v-for="index in 10" :key="index" @click="gotoBreakfastDetail(index)">
             <img :src="require('@/assets/breakfast/breakfast-' + (index - 1) + '.png')" alt="">
         </li>
     </ul>
@@ -14,10 +14,10 @@ import CustomTitle from './CustomTitle.vue';
 export default {
   name: 'breakfast',
   components: { CustomTitle },
-  data() {
-      return {
-          breakfastImg: ['@/assets/breakfast/breakfast-0.png']
-      }
+  methods: {
+    gotoBreakfastDetail(index) {
+        this.$router.push({path: '/breakfastDetail', query: {index}})
+    }
   }
 }
 </script>

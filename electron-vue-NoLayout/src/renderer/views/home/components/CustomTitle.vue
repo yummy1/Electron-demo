@@ -29,11 +29,12 @@ export default {
     display: flex;
     align-items: center;
     border-bottom: 1px solid #efefef;
+    border-top: 1px solid #efefef;
     background: #FFF9FF;
     i {
       display: inline-block;
-      width: 2px;
-      height: 20px;
+      width: 3px;
+      height: 14px;
       background: skyblue;
       margin-right: 7px;
     }

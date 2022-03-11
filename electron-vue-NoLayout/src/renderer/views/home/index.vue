@@ -18,9 +18,7 @@ import Pet from './components/Pet.vue'
 import Chat from './components/Chat.vue'
 export default {
   name: 'dashboard',
-  components: {appHeader, Breakfast, Pet, Chat},
-  computed: {
-  }
+  components: {appHeader, Breakfast, Pet, Chat}
 }
 </script>
 

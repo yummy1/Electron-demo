@@ -1,6 +1,9 @@
 <template>
   <div class="app-header">
     <div class="left-header">
+      <div @click="goBack">
+        <svg-icon v-if="hasBack" class-name="back" icon-class="back"></svg-icon>
+      </div>
       <img src="@/assets/logo.png" alt="">
       <h4>闲聊</h4>
     </div>
@@ -16,9 +19,21 @@ import { mapGetters } from 'vuex'
 
 export default {
   name: 'app-header',
+  props: {
+    hasBack: {
+      type: Boolean,
+      default: false
+    }
+  },
   computed: {
       ...mapGetters(['name', 'avatar'])
-  }
+  },
+  methods: {
+    goBack() {
+      console.log('back')
+      this.$router.back()
+    }
+  },
 }
 </script>
 
@@ -29,10 +44,16 @@ export default {
   align-items: center;
   justify-content: space-between;
   box-shadow: 2px 0 6px rgba(0,21,41,.15);
+  border-bottom: 1px solid #efefef;
   .left-header {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    .back {
+      margin-left: 20px;
+      width: 1.2em;
+      height: 1.2em;
+    }
     img {
       width: 50px;
       height: 60px;
@@ -55,10 +76,10 @@ export default {
     justify-content: space-around;
     color: #454545;
     font-size: 14px;
-    margin-right: 10px;
+    margin-right: 15px;
     img {
-      width: 30px;
-      height: 30px;
+      width: 40px;
+      height: 40px;
       margin-right: 5px;
     }
   }
