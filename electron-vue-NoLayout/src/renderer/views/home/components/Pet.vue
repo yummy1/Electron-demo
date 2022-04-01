@@ -3,7 +3,7 @@
     <custom-title title="心爱宠物"></custom-title>
     <ul>
         <li v-for="index in 10" :key="index">
-            <img :src="require('@/assets/pet/pet-' + (index - 1) + '.png')" alt="">
+            <img class="animate__animated animate__bounce" :src="require('@/assets/pet/pet-' + (index - 1) + '.png')" alt="">
         </li>
     </ul>
   </div>
@@ -19,7 +19,6 @@ export default {
 
 <style rel="stylesheet/scss" lang="scss" scoped>
 .pet {
-    height: 60%;
     ul {
         display: flex;
         flex-direction: row;

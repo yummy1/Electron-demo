@@ -3,7 +3,7 @@
     <custom-title title="营养早餐"></custom-title>
     <ul>
         <li v-for="index in 10" :key="index" @click="gotoBreakfastDetail(index)">
-            <img :src="require('@/assets/breakfast/breakfast-' + (index - 1) + '.png')" alt="">
+            <img class="animate__animated animate__tada" :src="require('@/assets/breakfast/breakfast-' + (index - 1) + '.png')" alt="">
         </li>
     </ul>
   </div>
@@ -24,7 +24,6 @@ export default {
 
 <style rel="stylesheet/scss" lang="scss" scoped>
 .breakfast {
-    height: 40%;
     ul {
         display: flex;
         flex-direction: row;

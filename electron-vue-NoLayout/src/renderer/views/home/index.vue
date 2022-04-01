@@ -5,6 +5,7 @@
       <div class="left-body">
         <breakfast></breakfast>
         <pet></pet>
+        <css-animation></css-animation>
       </div>
       <chat class="right-body"></chat>
     </div>
@@ -16,9 +17,10 @@ import appHeader from './components/Header.vue'
 import Breakfast from './components/Breakfast.vue'
 import Pet from './components/Pet.vue'
 import Chat from './components/Chat.vue'
+import CssAnimation from './components/CssAnimation'
 export default {
   name: 'dashboard',
-  components: {appHeader, Breakfast, Pet, Chat}
+  components: {appHeader, Breakfast, Pet, Chat, CssAnimation}
 }
 </script>
 
