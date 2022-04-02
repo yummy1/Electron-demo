@@ -1,5 +1,5 @@
 <template>
-  <div class="chat-list">
+  <div class="chat-list animate__animated animate__fadeInRightBig">
       <div class="chat-user">
           <img :src="require(`@/assets/chat/chat-user-${item.avatar}.png`)" alt="">
           <span>{{ item.name }}</span>

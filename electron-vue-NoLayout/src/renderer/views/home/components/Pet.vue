@@ -1,9 +1,9 @@
 <template>
   <div class="pet">
     <custom-title title="心爱宠物"></custom-title>
-    <ul>
-        <li v-for="index in 10" :key="index">
-            <img class="animate__animated animate__bounce" :src="require('@/assets/pet/pet-' + (index - 1) + '.png')" alt="">
+    <ul v-mm-loading="petLoading">
+        <li v-for="index in list" :key="index">
+            <img class="animate__animated animate__rotateInUpRight" :src="require('@/assets/pet/pet-' + (index - 1) + '.png')" alt="">
         </li>
     </ul>
   </div>
@@ -13,7 +13,20 @@
 import CustomTitle from './CustomTitle.vue';
 export default {
   name: 'pet',
-  components: { CustomTitle }
+  components: { CustomTitle },
+  data() {
+    return {
+      list: 0,
+      petLoading: false
+    }
+  },
+  mounted() {
+    this.petLoading = true
+    setTimeout(() => {
+      this.petLoading = false
+      this.list = 10
+    }, 3500)
+  },
 }
 </script>
 
@@ -24,6 +37,7 @@ export default {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
+        height: 260px;
         li {
             flex: 0 0 20%;
             height: 130px;

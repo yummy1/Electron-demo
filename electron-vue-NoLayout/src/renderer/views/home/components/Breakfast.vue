@@ -1,8 +1,8 @@
 <template>
   <div class="breakfast">
     <custom-title title="营养早餐"></custom-title>
-    <ul>
-        <li v-for="index in 10" :key="index" @click="gotoBreakfastDetail(index)">
+    <ul v-debounce-loading="breakfastLoading">
+        <li v-for="index in list" :key="index" @click="gotoBreakfastDetail(index)">
             <img class="animate__animated animate__tada" :src="require('@/assets/breakfast/breakfast-' + (index - 1) + '.png')" alt="">
         </li>
     </ul>
@@ -14,6 +14,19 @@ import CustomTitle from './CustomTitle.vue';
 export default {
   name: 'breakfast',
   components: { CustomTitle },
+  data() {
+    return {
+      list: 0,
+      breakfastLoading: false
+    }
+  },
+  mounted() {
+    this.breakfastLoading = true
+    setTimeout(() => {
+      this.breakfastLoading = false
+      this.list = 10
+    }, 3000)
+  },
   methods: {
     gotoBreakfastDetail(index) {
         this.$router.push({path: '/breakfastDetail', query: {index}})
@@ -29,6 +42,7 @@ export default {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
+        height: 220px;
         li {
             flex: 0 0 20%;
             height: 110px;

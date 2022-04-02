@@ -1,0 +1,53 @@
+/**loading-bounce start**/
+.loading-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  .full-loading-bounce {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: 60px;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    span {
+      display: inline-block;
+      user-select: none;
+      width: 8px;
+      height: 100%;
+      border-radius: 4px;
+      background: #4715d8;
+      animation: load 1s ease infinite;
+    }
+    span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+    span:nth-child(4) {
+      animation-delay: 0.6s;
+    }
+    span:nth-child(5) {
+      animation-delay: 0.8s;
+    }
+  }
+  @keyframes load {
+    0%,
+    100% {
+      height: 40px;
+      background: #4715d8;
+    }
+    50% {
+      height: 70px;
+      margin: -15px 0;
+      background: #e94960;
+    }
+  }
+}

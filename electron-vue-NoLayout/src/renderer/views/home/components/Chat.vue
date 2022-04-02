@@ -1,5 +1,5 @@
 <template>
-  <div class="chat">
+  <div class="chat" v-rainbow-loading="chatLoading">
     <custom-title title="聊聊"></custom-title>
     <chart-list v-for="(item, index) in list" :key="index" :item="item"></chart-list>
   </div>
@@ -13,7 +13,15 @@ export default {
   components: { CustomTitle, ChartList },
   data() {
       return {
-          list: [
+          chatLoading: false,
+          list: []
+      }
+  },
+  mounted() {
+    this.chatLoading = true
+    setTimeout(() => {
+      this.chatLoading = false
+      this.list = [
               {
                   name: '李丽',
                   avatar: '0',
@@ -45,7 +53,7 @@ export default {
                   text: '人生真奇妙！'
               }
           ]
-      }
+    }, 4000)
   }
 }
 </script>
